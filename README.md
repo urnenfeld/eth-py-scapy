@@ -10,3 +10,7 @@ Depending on how you design your net's topology, it might be that VLAN (IEEE 802
 - execute etester.py using sudo
 -- option 1 (specify path to python bin within virtualenv) : $sudo ./virtualenv/env/bin/python etester.py
 -- option 2 (make etester.py executable, add #!./virtualenv/env/bin/python as script 1st line) : $sudo ./etester.py
+
+### References
+http://www.secdev.org/projects/scapy/
+http://resources.infosecinstitute.com/port-scanning-using-scapy/
