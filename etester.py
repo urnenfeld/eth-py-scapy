@@ -1,3 +1,4 @@
+#!./virtualenv/env/bin/python
 # File  : etest.py
 # Who   : jamores
 #
@@ -63,6 +64,7 @@ class eTester:
         
     def _presentTest_console(self,test):
         print ""
+        print "-"*len("Test category : "+test.category)
         print "Test category : "+test.category
         print "-"*len("Test category : "+test.category)
 
@@ -76,10 +78,20 @@ class eTester:
 
         # show details about failed tests
         if(test.hasErrors):
-            print "\n"+TAB+"Error messages detail "
+            print ""
+            print TAB+"Error messages detail"
             for msg in test.getErrors():
                 print TAB+"[ERROR]".ljust(10,'.')+msg[0]
                 print "\n".join((2*TAB)+ i for i in msg[1].splitlines())
+
+        # show details about warnings
+        if(test.hasWarnings):
+            print ""
+            print TAB+"Warning messages detail"
+            for msg in test.getWarnings():
+                print TAB+"[WARN]".ljust(10,'.')+msg[0]
+                print "\n".join((2*TAB)+ i for i in msg[1].splitlines())
+
 
 
 if __name__ == '__main__':
