@@ -15,9 +15,9 @@ class baseTest:
 
     def addTestCase(self,title,error=None,warning=None):
         """ Add test case to collection, classifying in ERROR,WARN or OK."""
-        if(error != None):
+        if((error != None) and (error != "")):
             self._addLog(baseTest.LOG_ERROR,title,error)
-        elif(warning != None):
+        elif((warning != None) and (warning != "")):
             self._addLog(baseTest.LOG_WARN,title,warning)
         else:
             self._addLog(baseTest.LOG_OK,title,"")

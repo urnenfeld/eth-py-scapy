@@ -17,7 +17,7 @@ class test_example(baseTest):
 
         # test something here
 
-        msg = "this is the test result message, in case there's something\nto report more than test description"
+        msg = "this is the test result message, in case there's something\nto report more than just the test description"
 
         # log test results
         self.addTestCase("test one-liner",error=msg)
