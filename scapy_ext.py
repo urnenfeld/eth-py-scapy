@@ -400,4 +400,6 @@ class SD(Packet):
 # TODO : modify layer binding and define a broader range or ports
 bind_layers(UDP,SOMEIP,sport=30490)
 bind_layers(UDP,SOMEIP,sport=30501)
+bind_layers(TCP,SOMEIP,sport=30490)
+bind_layers(TCP,SOMEIP,sport=30501)
 bind_layers(SOMEIP,SD)
