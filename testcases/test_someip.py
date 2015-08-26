@@ -8,6 +8,9 @@ from scapy.all import *
 from scapy_ext import scapy_helper as helper
 from scapy_ext import *
 
+import threading
+import time
+
 ETH_IFACE = "eth1.10"
 
 class test_somepip(baseTest):
@@ -41,6 +44,13 @@ class test_somepip(baseTest):
         self.addTestCase("send SOMEIP Magic cookie",error=err_msg)
     
     # Test 01 : SOME/IP-SD : Find service
+    def _test_01_sender(self,p):
+        pass
+        ans = helper.srp1(p,iface="eth1.10",timeout=5)
+    def _test_01_rcv(self,p):
+        pass
+        time.sleep(1)
+        helper.sendp(p,iface="eth2.10")
     def test_01(self):
         """SOME/IP-SD packet."""
         err_msg = ""
@@ -59,8 +69,16 @@ class test_somepip(baseTest):
         sd.entry_array = [SDEntry_Service(type=0,srv_id=0x1111,inst_id=0x2222,major_ver=0x01,ttl=0x02)]
         
         # SEND MESSAGE
-        p = Ether()/IP(dst="10.0.0.11")/UDP(sport=30490,dport=30490)/sip/sd
-        ans = helper.srp1(p,iface="eth2.10")
+        p = Ether()/IP(src="10.0.0.11",dst="10.0.0.12")/UDP(sport=30490,dport=30490)/sip/sd
+        r = Ether()/IP(src="10.0.0.12",dst="10.0.0.11")/UDP(sport=30490,dport=30490)/sip/sd
+        #ans = helper.srp1(p,iface="eth2.10")
+
+        t_send = threading.Thread(name='sender',target=self._test_01_sender,args=(p,))
+        t_rcv = threading.Thread(name='receiver',target=self._test_01_rcv,args=(r,))
+        t_send.start()
+        t_rcv.start()
+        t_send.join()
+        t_rcv.join()
         
         # log test results
         self.addTestCase("send SOME/IP-SD : find service",error=err_msg)
