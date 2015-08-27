@@ -1,5 +1,5 @@
 #!./virtualenv/env/bin/python
-# File  : etest.py
+# File  : auto_eth_test.py
 # Who   : jamores
 #
 # Minimal infrastructure to execute test cases (autodiscover, autoinstantiation, autoexecution)

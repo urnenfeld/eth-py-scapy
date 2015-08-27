@@ -5,8 +5,8 @@
 from test_base import baseTest
 
 from scapy.all import *
-from scapy_ext import scapy_helper as helper
-from scapy_ext import *
+from scapy_someip import scapy_helper as helper
+from scapy_someip import *
 
 import threading
 import time

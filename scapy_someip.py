@@ -1,6 +1,6 @@
-# File  : scapy_ext.py
+# File  : scapy_someip.py
 # Who   : J.Amores
-# SCAPY extensions (SOME/IP, SD package definitions)
+# SCAPY SOME/IP-SD extensions 
 
 from scapy.fields import *
 from scapy.packet import *
@@ -397,9 +397,10 @@ class SD(Packet):
 ## -------------
 ## LAYER BINDING    
 ## -------------
-# TODO : modify layer binding and define a broader range or ports
-bind_layers(UDP,SOMEIP,sport=30490)
-bind_layers(UDP,SOMEIP,sport=30501)
-bind_layers(TCP,SOMEIP,sport=30490)
-bind_layers(TCP,SOMEIP,sport=30501)
+
+# bind layers for some ports around 30490
+for i in xrange(15):
+    bind_layers(UDP,SOMEIP,sport=30490+i)
+    bind_layers(TCP,SOMEIP,sport=30490+i)
+
 bind_layers(SOMEIP,SD)
