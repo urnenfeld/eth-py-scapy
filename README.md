@@ -28,7 +28,7 @@ iface eth1.10 inet static
     address 10.0.0.11
     netmask 255.255.255.0
 ```
-Now you're just an _ifup_ away to complete the configuration :
+Now you're just an _ifup_ away of completing the configuration :
 ```
 $sudo ifup eth1.10    
 ```
