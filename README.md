@@ -12,7 +12,7 @@ Either if you have to implement SOME-IP/SD based functionality on a ECU (uC) and
 
 ### 2.1 VLAN
 
-Depending on how you design your net's topology, it might be that VLAN (IEEE 802.1q) tagging is required. With Linux, it's a breeze to get it working, just follow a guideline like this one : https://wiki.ubuntu.com/vlan
+Depending on your net's topology design, it might be that VLAN (IEEE 802.1q) tagging is required. With Linux, it's a breeze to get it working, just follow a guideline like this one : https://wiki.ubuntu.com/vlan
 
 For Windows systems (at least up to Win7) as far as we now VLAN configuration depended totally on the capabilities of your internet interface's driver, so choose your hardware wisely!
 
