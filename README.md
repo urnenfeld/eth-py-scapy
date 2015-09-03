@@ -14,10 +14,10 @@ Either if you have to implement SOME-IP/SD based functionality on a ECU (uC) and
 
 Depending on your net's topology design, it might be that VLAN (IEEE 802.1q) tagging is required. With Linux, it's a breeze to get it working, just follow a guideline like this one : https://wiki.ubuntu.com/vlan
 
-For Windows systems (at least up to Win7) as far as we now VLAN configuration depended totally on the capabilities of your internet interface's driver, so choose your hardware wisely!
+For Windows systems (at least up to Win7), as far as we know, VLAN configuration depended totally on the capabilities of your internet interface's driver, so choose your hardware wisely!
 
 ### 2.2 Interface configuration (Linux)
-Below you can find an example _/etc/network/interfaces_ for a _eth1_, both with/without VLAN.
+Below you can find an example _/etc/network/interfaces_ for _eth1_, both with/without VLAN.
 ```
 # eth1
 iface eth1 inet static
