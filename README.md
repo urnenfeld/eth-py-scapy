@@ -33,7 +33,7 @@ Now you're just an _ifup_ away of completing the configuration :
 $sudo ifup eth1.10    
 ```
 ## 3. Build your own test collection
-We now that sometimes project's timings are so tight that every little help available could really make a difference, so we decided to include very _small and simple_ test infrastructure in order to build test cases from day one (let us insist on the _small an simple_ fact, we invite you to grab **eth-py-scapy** and adapt it to your own test suite).
+We now that sometimes project's timings are so tight, that every help available could really make a difference, so we decided to include very _small and simple_ test infrastructure in order to build test cases from day one (let us insist on the _small an simple_ fact, we invite you to grab **eth-py-scapy** and adapt it to your own test suite).
 
 ### 3.1 _auto_eth_test.py_ and _testcases_ folder
 ```
@@ -66,5 +66,5 @@ In order to run _auto_eth_test.py_ :
   - option 2 (make etester.py executable, add #!./virtualenv/env/bin/python as script 1st line) : ```$sudo ./auto_eth_test.py```
 
 ### 5. References
-http://www.secdev.org/projects/scapy/
-http://resources.infosecinstitute.com/port-scanning-using-scapy/
+- http://www.secdev.org/projects/scapy/
+- http://resources.infosecinstitute.com/port-scanning-using-scapy/
