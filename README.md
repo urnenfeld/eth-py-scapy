@@ -64,14 +64,14 @@ Open a bash console and enter _virualenv_ folder, from there execute following c
 ```
 $ virtualenv env
 $ source env
-$pip install -r requirements.txt
+$ pip install -r requirements.txt
 ```
 Now you have your new and shiny virtual enviroment ready!
 
 ### 4.2 Run it!!
 In order to run _auto_eth_test.py_ :
 - activate virtualenv : ```$source virtualenv/env/bin/activate```
-- execute auto_eth_test.py using sudo
+- execute _auto_eth_test.py_ using sudo
   - option 1 (specify path to python bin within virtualenv) : ```$sudo ./virtualenv/env/bin/python auto_eth_test.py```
   - option 2 (make etester.py executable, add #!./virtualenv/env/bin/python as script 1st line) : ```$sudo ./auto_eth_test.py```
 
