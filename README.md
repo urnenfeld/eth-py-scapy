@@ -6,7 +6,7 @@ Automotive Ethernet SOME-IP/SD Scapy extensions (Autosar 4.2)
 
 It's meant to be used as a central pillar to design and implement the "host end" of a _'uC <--> PC'_ net topology in a flexible and effective way. Due to its multiplatform nature, you can use as "host end" devices ranging from  a full fledged PC to a Raspberry Pi (or many!), being then able to build complex SOME-IP/SD networks on the cheap.
 
-Either if you have to implement SOME-IP/SD based functionality on a ECU (uC) and need some way to test it from your PC, or if you just want to learn how SOME-IP/SD works, **_eth-py-scapy_** is here to help you.
+Either if you need to test your ECU or microcontrolled based SOME-IP/SD implementation, or just want to learn how SOME-IP/SD works, **_eth-py-scapy_** is here to help you.
 
 ## 2. Configuration
 
@@ -28,12 +28,12 @@ iface eth1.10 inet static
     address 10.0.0.11
     netmask 255.255.255.0
 ```
-Now you're just an _ifup_ away of completing the configuration :
+Now you're just an _ifup_ away from completing the configuration :
 ```
 $sudo ifup eth1.10    
 ```
 ## 3. Build your own test collection
-We now that sometimes project's timings are so tight, that every help available could really make a difference, so we decided to include very _small and simple_ test infrastructure in order to build test cases from day one (let us insist on the _small an simple_ fact, we invite you to grab **eth-py-scapy** and adapt it to your own test suite).
+We now that sometimes project's timings are so tight, that every help available could make a difference, so we decided to include a very _small and simple_ test infrastructure in order to build test cases from day one (let us insist on the _small an simple_ fact, we invite you to grab **eth-py-scapy** and adapt it to your own test suite).
 
 ### 3.1 _auto_eth_test.py_ and _testcases_ folder
 ```
@@ -49,11 +49,11 @@ On the other hand, **auto_eth_test.py** is the launcher that takes care of autoe
 
 ### 3.2 TestCase creation and _auto_execution
 Creating a new TestCollection is as easy as :
-- _touching_ a new python file within _testcases_ folder. Each file represents a test _category_.
-- create a Subclass of baseTest. Populate this class with r'^test.*' functions representing _test cases_.
-- launch _auto_eth_test.py_. If you have defined everything corretly, your test collection will be automatically launched.
+- create a new python file within _testcases_ folder. Each file represents a test _category_.
+- within previous file, create a Subclass of baseTest. Populate this class with r'^test.*' functions representing _test cases_.
+- launch _auto_eth_test.py_. If you have defined everything correctly, your test collection will be automatically launched.
 
-Use the functions provided by _baseTest_ to organize our test cases and define how feedback is reported from them (error/warning messages ...). As an example, please observe the examples provided.
+Use the functions provided by _baseTest_ to organize our test cases and define how feedback is reported from them (error/warning messages ...). As reference, please observe the examples provided.
 
 ## 4. Virtual environment
 We now this might not be the best distribution method available, but using _virtualenv_ we are almost completely sure that you *will* be able to play with _eth-py-scapy_ right out of the git clone ;)
