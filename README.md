@@ -68,7 +68,7 @@ $pip install -r requirements.txt
 ```
 Now you have your new and shiny virtual enviroment ready!
 
-### 4.2 Running
+### 4.2 Run it!!
 In order to run _auto_eth_test.py_ :
 - activate virtualenv : ```$source virtualenv/env/bin/activate```
 - execute auto_eth_test.py using sudo
