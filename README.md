@@ -59,11 +59,23 @@ Use the functions provided by _baseTest_ to organize our test cases and define h
 We now this might not be the best distribution method available, but using _virtualenv_ we are almost completely sure that you *will* be able to play with _eth-py-scapy_ right out of the git clone ;)
 Only requirement is to have Python installed on your system.
 
+### 4.1 Restore virtualenv
+Open a bash console and enter _virualenv_ folder, from there execute following commands:
+```
+$ virtualenv env
+$ source env
+$pip install -r requirements.txt
+```
+Now you have your new and shiny virtual enviroment ready!
+
+### 4.2 Running
 In order to run _auto_eth_test.py_ :
-- set virtualenv : ```$source virtualenv/env/bin/activate```
+- activate virtualenv : ```$source virtualenv/env/bin/activate```
 - execute auto_eth_test.py using sudo
   - option 1 (specify path to python bin within virtualenv) : ```$sudo ./virtualenv/env/bin/python auto_eth_test.py```
   - option 2 (make etester.py executable, add #!./virtualenv/env/bin/python as script 1st line) : ```$sudo ./auto_eth_test.py```
+
+Once you are finished, deactivate virtualenv with ```deactivate```
 
 ### 5. References
 - http://www.secdev.org/projects/scapy/
