@@ -56,9 +56,14 @@ class scapy_helper:
     
     @staticmethod
     def newSD():
-        """ Create new SD package. Just for consistency with 'newSOMEIP' method."""
-        p = SD()
-        return(p)
+        """ Create new SD package. Returns both SOME/IP and SD."""
+        p_sip= scapy_helper.SOMEIP()
+        p_sip.msg_id = SD.SOMEIP_MSGID
+        p_sip.proto_ver = SD.SOMEIP_PROTO_VER
+        p_sip.type = SD.SOMEIP_TYPE
+
+        p_sd = SD()
+        return(p_sip,p_sd)
 
 ## -------------------------
 ## SOME/IP PACKAGE DEFINTION
@@ -365,8 +370,13 @@ class SDOption_IP6_SD_EndPoint(_SDOption_IP6):
 # SD packet definition
 # --------------------
 class SD(Packet):
+    SOMEIP_MSGID = 0xfff8100
+    SOMEIP_PROTO_VER = 0x01
+    SOMEIP_IFACE = 0x01
+    SOMEIP_TYPE = 0x2
+
     # TODO : improve 'flags' field
-        # Flags definition: {"name":(mask,offset)}
+    # Flags definition: {"name":(mask,offset)}
     FLAGSDEF =  {   "RB":(0x80,7),   # ReBoot flag
                     "UC":(0x40,6)    # UniCast flag
                 }
