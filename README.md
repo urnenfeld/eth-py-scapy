@@ -1,12 +1,12 @@
 # eth-py-scapy
-Automotive Ethernet SOME-IP/SD Scapy extensions (Autosar 4.2)
+Automotive Ethernet SOME/IP-SD Scapy extensions (Autosar 4.2)
 
 ## 1. What is this?
-**_eth-py-scapy_** is a Python package implementing Automotive Ethernet SOME-IP/SD protocol over Scapy.
+**_eth-py-scapy_** is a Python package implementing Automotive Ethernet SOME/IP-SD protocol over Scapy.
 
-It's meant to be used as a central pillar to design and implement the "host end" of a _'uC <--> PC'_ net topology in a flexible and effective way. Due to its multiplatform nature, you can use as "host end" devices ranging from  a full fledged PC to a Raspberry Pi (or many!), being then able to build complex SOME-IP/SD networks on the cheap.
+It's meant to be used as a central pillar to design and implement the "host end" of a _'uC <--> PC'_ net topology in a flexible and effective way. Due to its multiplatform nature, you can use as "host end" devices ranging from  a full fledged PC to a Raspberry Pi (or many!), being then able to build complex SOME/IP-SD networks on the cheap.
 
-Either if you need to test your ECU or microcontrolled based SOME-IP/SD implementation, or just want to learn how SOME-IP/SD works, **_eth-py-scapy_** is here to help you.
+Either if you need to test your ECU or microcontrolled based SOME/IP-SD implementation, or just want to learn how SOME/IP-SD works, **_eth-py-scapy_** is here to help you.
 
 ## 2. Configuration
 
