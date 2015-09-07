@@ -57,8 +57,11 @@ class scapy_helper:
     @staticmethod
     def newSD():
         """ Create new SD package. Returns both SOME/IP and SD."""
-        p_sip= scapy_helper.SOMEIP()
-        p_sip.msg_id = SD.SOMEIP_MSGID
+        p_sip= scapy_helper.newSOMEIP()
+        p_sip.msg_id.srv_id = SD.SOMEIP_MSGID_SRV_ID
+        p_sip.msg_id.sub_id = SD.SOMEIP_MSGID_SUB_ID
+        p_sip.msg_id.evt_id = SD.SOMEIP_MSGID_EVT_ID
+
         p_sip.proto_ver = SD.SOMEIP_PROTO_VER
         p_sip.type = SD.SOMEIP_TYPE
 
@@ -370,7 +373,9 @@ class SDOption_IP6_SD_EndPoint(_SDOption_IP6):
 # SD packet definition
 # --------------------
 class SD(Packet):
-    SOMEIP_MSGID = 0xfff8100
+    SOMEIP_MSGID_SRV_ID = 0xffff
+    SOMEIP_MSGID_SUB_ID = 0x1
+    SOMEIP_MSGID_EVT_ID = 0x100
     SOMEIP_PROTO_VER = 0x01
     SOMEIP_IFACE = 0x01
     SOMEIP_TYPE = 0x2
