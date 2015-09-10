@@ -378,7 +378,7 @@ class SD(Packet):
     SOMEIP_MSGID_EVT_ID = 0x100
     SOMEIP_PROTO_VER = 0x01
     SOMEIP_IFACE = 0x01
-    SOMEIP_TYPE = 0x2
+    SOMEIP_TYPE = SOMEIP.TYPE_NOTIFICATION
 
     # TODO : improve 'flags' field
     # Flags definition: {"name":(mask,offset)}
