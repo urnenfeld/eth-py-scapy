@@ -56,15 +56,15 @@ Creating a new TestCollection is as easy as :
 Use the functions provided by _baseTest_ to organize our test cases and define how feedback is reported from them (error/warning messages ...). As reference, please observe the examples provided.
 
 ## 4. Virtual environment
-We now this might not be the best distribution method available, but using _virtualenv_ we are almost completely sure that you *will* be able to play with _eth-py-scapy_ right out of the git clone ;)
+We know this might not be the best distribution method available, but using _virtualenv_ we are almost completely sure that you *will* be able to play with _eth-py-scapy_ right out of the git clone ;)
 Only requirement is to have Python installed on your system.
 
 ### 4.1 Restore virtualenv
 Open a bash console and enter _virualenv_ folder, from there execute following commands:
 ```
 $ virtualenv env
-$ source env
-$ pip install -r requirements.txt
+$ source env/bin/activate
+$ env/bin/pip install -r requirements.txt
 ```
 Now you have your new and shiny virtual enviroment ready!
 
