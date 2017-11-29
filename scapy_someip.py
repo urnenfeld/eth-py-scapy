@@ -417,5 +417,7 @@ class SD(Packet):
 for i in xrange(15):
     bind_layers(UDP,SOMEIP,sport=30490+i)
     bind_layers(TCP,SOMEIP,sport=30490+i)
+    bind_layers(UDP,SOMEIP,dport=30490+i)
+    bind_layers(TCP,SOMEIP,dport=30490+i)
 
 bind_layers(SOMEIP,SD)
